@@ -1,6 +1,11 @@
 <!--Inmportando o cabeçalho de um arquivo php-->
 <?php include "cabecalho.php" ?>
+
 <?php
+$bd = new SQLite3("filmes.db");
+$sql = "SELECT * FROM filmes";
+$filmes = $bd->query($sql);
+
 $filme1 = [
   "titulo" => "Interestelar",
   "nota" => 8.6,
@@ -27,7 +32,7 @@ $filme4 = [
   "sinopse" => "Enquanto adapta um romance de fantasia para videogame em 1984, um jovem programador começa a questionar o próprio conceito de realidade e acaba enfrentando um desafio alucinante.",
   "poster" => "https://image.tmdb.org/t/p/original/fR0VZ0VE598zl1lrYf7IfBqEwQ2.jpg"
 ];
-$filmes = [$filme1, $filme2, $filme3, $filme4]
+//$filmes = [$filme1, $filme2, $filme3, $filme4]
 ?>
 
 <body>
@@ -52,7 +57,7 @@ $filmes = [$filme1, $filme2, $filme3, $filme4]
 
   <div class="row">
     <!-- Inicio do card -->
-    <?php foreach ($filmes as $filme) : ?>
+    <?php while($filme = $filmes->fetchArray()) :?>
       <div class="col s3">
         <div class="card hoverable">
           <div class="card-image">
@@ -68,7 +73,7 @@ $filmes = [$filme1, $filme2, $filme3, $filme4]
           </div>
         </div>
       </div>
-    <?php endforeach ?>
+    <?php endwhile ?>
     <!-- Fim do card -->
   </div>
 </body>
