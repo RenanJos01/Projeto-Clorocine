@@ -35,8 +35,7 @@ else
     echo "\nErro ao inserir filmes  \n";
 
 //Inserindo filme
-$sql = "INSERT INTO filmes(id, titulo, poster,sinopse, nota) VALUES(
-    1,
+$sql = "INSERT INTO filmes(titulo, poster,sinopse, nota) VALUES(
     'Your Name',
     'https://image.tmdb.org/t/p/original/iwWGMrybix3DZ4V7TJEL0IPURWT.jpg',
     'Mitsuha Miyamizu, uma colegial, deseja viver a vida de um garoto na cidade fervorosa de Tóquio, um sonho que contrasta com sua vida atual no interior. Enquanto isso na cidade, Taki Tachibana vive uma vida ocupada de colegial entre seus estudos e seu emprego de meio-período, esperando por um futuro na arquitetura. Um dia, Mitsuha acorda num quarto que não é dela, e se vê vivendo a vida dos sonhos em Tóquio, mas no corpo de Taki! Em outro lugar,
