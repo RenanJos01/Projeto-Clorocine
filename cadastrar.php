@@ -12,7 +12,7 @@
             <h1 class="center">CLOROCINE</h1>
         </div>
         <div class="nav-content">
-            <ul class="tabs tabs-transparent #8e24aa purple darken-1">
+            <ul class="tabs tabs-transparent">
                 <li class="tab"><a href="">Todos</a></li>
                 <li class="tab"><a href="">Assistidos</a></li>
                 <li class="tab"><a href="">Favoritos</a></li>

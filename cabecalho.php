@@ -13,6 +13,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Importando o css-->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Importando o Fav Icon-->
+  <link rel="shortcut icon" href="imagens/favicon.ico">
 
   <title>Clorocine</title>
 </head>

@@ -1,15 +1,24 @@
-body{
+body {
     background-color: #e5e5e5;
 }
-.nav-extended{
-    background-image: url("../imagens/capa.jpg");
+
+.nav-extended {
+    background-image: url("../imagens/background.png");
     background-size: cover;
-    background-blend-mode: soft-light;
 }
-nav ul li.active, .tab a.active{
+
+nav ul li.active,
+.tab a.active {
     border-bottom: solid 2px white;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.11);
 }
-.nav-header h1{
-    text-shadow: 2px 2px 10px black;
+
+.nav-header h1 {
+    margin-bottom: 1em;
+}
+.card{
+    border-radius: 10px ;
+}
+.card .card-image img{
+    border-radius: 10px 10px 0 0;
 }

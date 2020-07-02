@@ -19,7 +19,7 @@ $filmes = $bd->query($sql);
       <h1 class="center">CLOROCINE</h1>
     </div>
     <div class="nav-content">
-      <ul class="tabs tabs-transparent #8e24aa purple darken-1">
+      <ul class="tabs tabs-transparent">
         <li class="tab"><a class="active" href="">Todos</a></li>
         <li class="tab"><a href="">Assistidos</a></li>
         <li class="tab"><a href="">Favoritos</a></li>
@@ -33,8 +33,8 @@ $filmes = $bd->query($sql);
         <div class="col s12 m6 l3">
           <div class="card hoverable">
             <div class="card-image">
-              <img src="<?= $filme["poster"] ?>">
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+              <img  src="<?= $filme["poster"] ?>">
+              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">playlist_add_check</i></a>
             </div>
             <div class="card-content">
               <p class="valign-wrapper">
