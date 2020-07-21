@@ -21,7 +21,7 @@
     </nav>
 
     <div class="row">
-        <form action="inserirFilme.php" method="POST">
+        <form method="POST">
             <div class="col s6 offset-s3">
                 <div class="card white">
                     <div class="card-content">
@@ -69,7 +69,7 @@
 
                     </div>
                     <div class="card-action">
-                        <a class="btn waves-effect grey" href="galeria.php">Cancelar</a>
+                        <a class="btn waves-effect grey" href="/">Cancelar</a>
                         <button type="submit" class="waves-effect waves-light btn right purple">Cadastrar</button>
                     </div>
                 </div>

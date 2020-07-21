@@ -2,17 +2,21 @@
 <?php include "cabecalho.php" ?>
 
 <?php
-$bd = new SQLite3("filmes.db");
-$sql = "SELECT * FROM filmes";
-$filmes = $bd->query($sql);
+session_start();
+
+require "repositorio/filmesRepositorioPDO.php";
+require "util/Mensagem.php";
+
+$filmesRepositorio = new FilmesRepositorioPDO();
+$filmes = $filmesRepositorio->listarTodos();
 ?>
 
 <body>
   <nav class="nav-extended #ce93d8 purple lighten-3">
     <div class="nav-wrapper">
       <ul id="nav-mobile" class="right">
-        <li class="active"><a href="galeria.php">Galeria</a></li>
-        <li><a href="cadastrar.php">Cadastrar</a></li>
+        <li class="active"><a href="/">Galeria</a></li>
+        <li><a href="/novo">Cadastrar</a></li>
       </ul>
     </div>
     <div class="nav-header">
@@ -29,33 +33,28 @@ $filmes = $bd->query($sql);
   <div class="container">
     <div class="row">
       <!-- Inicio do card -->
-      <?php while ($filme = $filmes->fetchArray()) : ?>
+      <?php foreach ($filmes as $filme) : ?>
         <div class="col s12 m6 l3">
           <div class="card hoverable">
             <div class="card-image">
-              <img  src="<?= $filme["poster"] ?>">
+              <img src="<?= $filme->poster ?>">
               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">playlist_add_check</i></a>
             </div>
             <div class="card-content">
               <p class="valign-wrapper">
-                <i class="material-icons amber-text">star</i><?= $filme["nota"] ?>
+                <i class="material-icons amber-text">star</i><?= $filme->nota ?>
               </p>
-              <span class="card-title"><?= $filme["titulo"] ?></span>
-              <p><?= $filme["sinopse"] ?></p>
+              <span class="card-title"><?= $filme->titulo ?></span>
+              <p><?= $filme->sinopse ?></p>
             </div>
           </div>
         </div>
-      <?php endwhile ?>
+      <?php endforeach ?>
       <!-- Fim do card -->
     </div>
   </div>
+        <!-- Mostrando a mensagem se foi cadastrado com sucesso ou não-->
+        <?= Mensagem::mostrar(); ?>
 </body>
-<?php if (isset($_GET["msg"])) : ?>
-  <script>
-    M.toast({
-      html: '<?= $_GET["msg"] ?>'
-    });
-  </script>
-<?php endif ?>
 
 </html>
