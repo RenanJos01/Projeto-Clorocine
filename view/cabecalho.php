@@ -12,7 +12,7 @@
   <!--Importando os icon do Material Design-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Importando o css-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../style.css">
   <!-- Importando o Fav Icon-->
   <link rel="shortcut icon" href="imagens/favicon.ico">
 
