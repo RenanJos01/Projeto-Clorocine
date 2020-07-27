@@ -42,7 +42,7 @@ $filmes = $controller->index();
               <p class="valign-wrapper">
                 <i class="material-icons amber-text">star</i><?= $filme->nota ?>
               </p>
-              <span class="card-title"><?= $filme->titulo ?></span>
+              <span class="card-title"><?= $filme->titulo?></span>
               <p><?= $filme->sinopse ?></p>
             </div>
           </div>

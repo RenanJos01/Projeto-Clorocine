@@ -57,7 +57,7 @@
 
                         <!-- input da capa do filme-->
                         <div class="file-field input-field">
-                            <div class="btn purple lighten-2">
+                            <div class="btn purple">
                                 <span>Capa</span>
                                 <input type="file" name="poster_file">
                             </div>

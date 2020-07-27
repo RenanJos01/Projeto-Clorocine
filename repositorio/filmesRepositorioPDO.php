@@ -23,8 +23,7 @@ class FilmesRepositorioPDO
         }
         return $filmesLista;
     }
-    public function salvar(Filme $filme): bool
-    {
+    public function salvar($filme): bool{
         $sql = "INSERT INTO filmes(titulo, poster,sinopse, nota) VALUES(:titulo, :poster, :sinopse, :nota)";
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(':titulo', $filme->titulo, PDO::PARAM_STR);

@@ -13,12 +13,13 @@ class FilmesController{
     public function save($request)
     {
         $filmesRepositorio = new FilmesRepositorioPDO();
-        $filme = new Filme();
+        $filme = (object) $request;
 
-        $filme->titulo     = $request["titulo"];
-        $filme->sinopse    = $request["sinopse"];
-        $filme->nota       = $request["nota"];
-        $filme->poster     = $request["poster"];
+        $upload = $this->savePoster($_FILES);
+
+        if(gettype($upload)=="string"){
+            $filme->poster=$upload;
+        }
 
         //Verificando se o filme foi inserido
         if ($filmesRepositorio->salvar($filme))
@@ -27,5 +28,15 @@ class FilmesController{
             $_SESSION["msg"] = "Erro ao casdatrar filme";
 
         header("Location: /");
+    }
+    private function savePoster($file){
+        $posterDir = "imagens/posters/";
+        $posterPath = $posterDir.basename($file["poster_file"]["name"]);
+        $posterTemp = $file["poster_file"]["tmp_name"];
+        if(move_uploaded_file($posterTemp, $posterPath)){
+            return $posterPath;
+        }else{
+            return false;
+        }
     }
 }
